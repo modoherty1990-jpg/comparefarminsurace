@@ -75,14 +75,10 @@ export default async function GuidePage({ params }) {
             </p>
           )}
 
-          <div
-            style={{
-              color: '#cbd5e1',
-              lineHeight: 1.8,
-              fontSize: '1rem',
-            }}
-            dangerouslySetInnerHTML={{ __html: guide.content }}
-          />
+        <div
+  className="guide-content"
+  dangerouslySetInnerHTML={{ __html: guide.content }}
+/>
 
           <div style={{
             marginTop: '4rem',
