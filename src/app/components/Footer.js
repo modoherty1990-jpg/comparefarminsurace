@@ -89,11 +89,11 @@ export default function Footer() {
           }}>Guides</h4>
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             {[
-              { label: 'Public liability', href: '/guides/public-liability-insurance-builders' },
-              { label: 'Contract works', href: '/guides/contract-works-insurance-guide' },
-              { label: 'Professional indemnity', href: '/guides/professional-indemnity-insurance-builders' },
-              { label: 'Tools insurance', href: '/guides/tools-insurance-tradies' },
-              { label: 'All guides →', href: '/guides' },
+              { label: 'Public liability', href: '/guides' },
+{ label: 'Contract works', href: '/guides' },
+{ label: 'Professional indemnity', href: '/guides' },
+{ label: 'Tools insurance', href: '/guides' },
+{ label: 'All guides →', href: '/guides' },
             ].map(link => (
               <li key={link.label}>
                 <a href={link.href} style={{
