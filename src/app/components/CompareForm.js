@@ -283,8 +283,8 @@ export default function CompareForm() {
                     This broker specialises in your trade and covers what you need. Give them a call or visit their website to talk through your situation and get a quote.
                   </p>
                   <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                    {broker.phone && (
-<a href={`tel:${broker.phone}`}
+                  {broker.phone && broker.show_phone !== false && (
+  <a href={`tel:${broker.phone}`}
   onClick={() => window.gtag && window.gtag('event', 'broker_click', { broker_name: broker.name, click_type: 'phone' })}
   style={{
     background: '#f59e0b', color: '#0f1923',
@@ -292,7 +292,7 @@ export default function CompareForm() {
     fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none',
   }}>📞 {broker.phone}</a>
                     )}
-                    {broker.website && (
+                    {broker.website && broker.show_website !== false && (
 <a href={broker.website} target="_blank" rel="noopener noreferrer"
   onClick={() => window.gtag && window.gtag('event', 'broker_click', { broker_name: broker.name, click_type: 'website' })}
   style={{
