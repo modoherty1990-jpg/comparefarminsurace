@@ -4,10 +4,10 @@ import GuidesContent from './GuidesContent'
 
 export const metadata = {
   title: 'Insurance Guides for Builders & Tradies | compareconstructioninsurance.com.au',
-  description: 'Free insurance guides for Australian builders, tradies and contractors.',
+  description: 'Plain English guides to construction and trades insurance in Australia. Public liability, contract works, professional indemnity, tools insurance and more.',
 }
 
-export default function Guides() {
+export default function GuidesPage() {
   return (
     <>
       <Header />
