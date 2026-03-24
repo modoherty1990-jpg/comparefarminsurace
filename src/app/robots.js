@@ -1,10 +1,11 @@
+// src/app/robots.js
 export default function robots() {
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/admin/',
+      disallow: '/admin',
     },
-    sitemap: 'https://www.compareconstructioninsurance.com.au/sitemap.xml',
+    sitemap: 'https://comparefarminsurace.com.au/sitemap.xml',
   }
 }

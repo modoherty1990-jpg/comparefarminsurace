@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Logo from './Logo'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -12,9 +13,8 @@ export default function Header() {
   }, [])
 
   const links = [
-    { label: 'Compare', href: '#compare' },
+    { label: 'How It Works', href: '#how' },
     { label: 'Brokers', href: '#brokers' },
-    { label: 'Why Us', href: '#why' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Guides', href: '/guides' },
   ]
@@ -23,7 +23,7 @@ export default function Header() {
     <>
       <nav style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        background: scrolled ? 'rgba(15,25,35,0.97)' : 'rgba(15,25,35,0.92)',
+        background: scrolled ? 'rgba(30,61,20,0.98)' : 'rgba(30,61,20,0.94)',
         backdropFilter: 'blur(16px)',
         borderBottom: '1px solid rgba(255,255,255,0.08)',
         padding: '0 5%',
@@ -32,21 +32,8 @@ export default function Header() {
         transition: 'background 0.3s',
       }}>
 
-        <a href="/" style={{
-          lineHeight: 1, display: 'flex', flexDirection: 'column',
-          gap: '3px', textDecoration: 'none',
-        }}>
-          <span style={{
-            fontFamily: 'var(--font-jakarta), sans-serif',
-            fontSize: '1.2rem', fontWeight: 800,
-            letterSpacing: '-0.04em', color: '#ffffff',
-          }}>compare</span>
-          <span style={{
-            fontFamily: 'var(--font-jakarta), sans-serif',
-            fontSize: '0.6rem', fontWeight: 600,
-            letterSpacing: '0.12em', textTransform: 'uppercase',
-            color: '#f59e0b',
-          }}>construction insurance</span>
+        <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+<Logo variant="dark" height={52} />
         </a>
 
         <ul className="desktop-nav" style={{
@@ -56,21 +43,32 @@ export default function Header() {
           {links.map(link => (
             <li key={link.label}>
               <a href={link.href} style={{
-                color: '#cbd5e1', textDecoration: 'none',
+                color: 'rgba(255,255,255,0.8)', textDecoration: 'none',
                 fontSize: '0.875rem', fontWeight: 500,
                 transition: 'color 0.2s',
               }}
-              onMouseEnter={e => e.target.style.color = '#ffffff'}
-              onMouseLeave={e => e.target.style.color = '#cbd5e1'}
+              onMouseEnter={e => e.target.style.color = '#c9a227'}
+              onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.8)'}
               >{link.label}</a>
             </li>
           ))}
         </ul>
 
-        <a href="#compare" className="btn-primary desktop-cta" style={{
-          padding: '8px 20px', fontSize: '0.875rem',
-        }}>
-          Compare Now
+        <a href="#quiz" className="desktop-cta" style={{
+          background: '#c9a227',
+          color: '#1e3d14',
+          padding: '9px 20px',
+          borderRadius: '6px',
+          fontSize: '0.875rem',
+          fontWeight: 600,
+          textDecoration: 'none',
+          transition: 'background 0.2s',
+          fontFamily: "'DM Sans', sans-serif",
+        }}
+        onMouseEnter={e => e.target.style.background = '#e8bc45'}
+        onMouseLeave={e => e.target.style.background = '#c9a227'}
+        >
+          Find a Broker
         </a>
 
         <button
@@ -109,7 +107,7 @@ export default function Header() {
       {menuOpen && (
         <div style={{
           position: 'fixed', top: '64px', left: 0, right: 0,
-          background: '#0f1923',
+          background: '#1e3d14',
           borderBottom: '1px solid rgba(255,255,255,0.08)',
           zIndex: 99,
           padding: '1.5rem 5%',
@@ -119,18 +117,24 @@ export default function Header() {
             <a key={link.label} href={link.href}
               onClick={() => setMenuOpen(false)}
               style={{
-                color: '#cbd5e1', textDecoration: 'none',
+                color: 'rgba(255,255,255,0.8)', textDecoration: 'none',
                 fontSize: '1rem', fontWeight: 500,
                 padding: '1rem 0',
                 borderBottom: '1px solid rgba(255,255,255,0.06)',
               }}
             >{link.label}</a>
           ))}
-          <a href="#compare" className="btn-primary"
-            style={{ marginTop: '1.5rem', textAlign: 'center' }}
+          <a href="#quiz"
+            style={{
+              marginTop: '1.5rem', textAlign: 'center',
+              background: '#c9a227', color: '#1e3d14',
+              padding: '14px 28px', borderRadius: '8px',
+              fontWeight: 600, textDecoration: 'none',
+              fontFamily: "'DM Sans', sans-serif",
+            }}
             onClick={() => setMenuOpen(false)}
           >
-            Compare Now
+            Find a Broker
           </a>
         </div>
       )}

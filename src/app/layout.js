@@ -1,115 +1,106 @@
-import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google'
+// src/app/layout.js
+// Swap GA_MEASUREMENT_ID once you create the GA4 property
+
+import { Fraunces, DM_Sans } from 'next/font/google'
 import './globals.css'
 
-const plusJakarta = Plus_Jakarta_Sans({
+const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-jakarta',
+  variable: '--font-fraunces',
+  display: 'swap',
+  axes: ['opsz'],
 })
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-dm',
+  variable: '--font-dm-sans',
+  weight: ['300', '400', '500', '600'],
+  display: 'swap',
 })
 
+const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // replace after creating GA4 property
+
 export const metadata = {
-  title: 'Compare Construction Insurance Brokers Australia | Free Matching Tool',
-  description: 'Compare specialist construction insurance brokers across Australia. Answer 5 quick questions and get matched to the right broker for your trade, cover needs and state. Free for builders, tradies and contractors.',
-  keywords: 'construction insurance broker, tradie insurance, builder insurance, compare insurance brokers australia',
-  metadataBase: new URL('https://www.compareconstructioninsurance.com.au'),
+  title: 'Compare Farm Insurance Australia | Find the Right Broker for Your Farm',
+  description: 'Answer 6 quick questions and get matched with specialist farm insurance brokers who know your type of farming. Free, no obligation. Compare farm insurance brokers across Australia.',
+  keywords: 'farm insurance Australia, farm insurance broker, compare farm insurance, crop insurance, livestock insurance, hobby farm insurance, agribusiness insurance',
+  authors: [{ name: 'Compare Farm Insurance' }],
+  creator: 'Compare Farm Insurance',
+  metadataBase: new URL('https://comparefarminsurace.com.au'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://comparefarminsurace.com.au',
   },
   openGraph: {
+    title: 'Compare Farm Insurance Australia',
+    description: 'Find the right farm insurance broker for your operation. Matched by farm type, location, and scale.',
+    url: 'https://comparefarminsurace.com.au',
+    siteName: 'Compare Farm Insurance',
+    locale: 'en_AU',
     type: 'website',
-    url: 'https://www.compareconstructioninsurance.com.au',
-    title: 'Compare Construction Insurance Brokers Australia',
-    description: 'Answer 5 quick questions and get matched to specialist construction insurance brokers. Free for builders, tradies and contractors.',
-    siteName: 'compareconstructioninsurance.com.au',
+    images: [
+      {
+        url: '/og-image.jpg', // add a 1200x630 farm photo here
+        width: 1200,
+        height: 630,
+        alt: 'Compare Farm Insurance Australia',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
-    title: 'Compare Construction Insurance Brokers Australia',
-    description: 'Answer 5 quick questions and get matched to specialist construction insurance brokers.',
+    card: 'summary_large_image',
+    title: 'Compare Farm Insurance Australia',
+    description: 'Find the right farm insurance broker for your operation.',
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 }
 
-const schemaOrg = {
+// Schema markup — WebSite + Organization + FAQPage (homepage)
+const schemaMarkup = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': 'https://www.compareconstructioninsurance.com.au/#website',
-      url: 'https://www.compareconstructioninsurance.com.au',
-      name: 'Compare Construction Insurance',
-      description: 'Australia\'s specialist construction insurance broker comparison platform',
-      inLanguage: 'en-AU',
+      '@id': 'https://comparefarminsurace.com.au/#website',
+      url: 'https://comparefarminsurace.com.au',
+      name: 'Compare Farm Insurance',
+      description: 'Australia\'s farm insurance broker matching service',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://comparefarminsurace.com.au/guides?search={search_term_string}',
+        'query-input': 'required name=search_term_string',
+      },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://www.compareconstructioninsurance.com.au/#organization',
-      name: 'Compare Construction Insurance',
-      url: 'https://www.compareconstructioninsurance.com.au',
-      description: 'Connecting Australian builders, tradies and contractors with specialist insurance brokers.',
+      '@id': 'https://comparefarminsurace.com.au/#organization',
+      name: 'Compare Farm Insurance',
+      url: 'https://comparefarminsurace.com.au',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://comparefarminsurace.com.au/logo.svg',
+      },
+      description: 'Farm insurance broker matching service for Australian farmers',
       areaServed: 'AU',
-      serviceType: 'Insurance Broker Comparison',
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Is this service really free?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes — completely free for tradies and builders. We may receive a referral fee from brokers when you make contact, but this never influences your match results.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How do you match me with brokers?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'We score every broker against your trade type, cover needed, business size and state. Only brokers who score above a minimum threshold appear in your results.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Do you provide financial advice?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'No. This is a filtering and referral tool, not a financial advice service. Contact brokers directly for advice specific to your situation.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Are all brokers licensed?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Every broker listed is either an AFSL holder or an authorised representative of an AFSL holder. You can verify credentials at moneysmart.gov.au.',
-          },
-        },
-      ],
     },
   ],
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable}`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
-        />
+        {/* GA4 */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-XQ4BR0QDPP"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         />
         <script
           dangerouslySetInnerHTML={{
@@ -117,9 +108,14 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XQ4BR0QDPP');
+              gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
             `,
           }}
+        />
+        {/* Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
         />
       </head>
       <body>{children}</body>
