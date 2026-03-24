@@ -79,7 +79,7 @@ const { data: brokers } = await supabase
               {broker.show_website && broker.website && (
                 <a href={`https://${broker.website}`} target="_blank" rel="noopener noreferrer"
                   style={{ fontSize: '13px', color: 'var(--green-light)', textDecoration: 'none' }}>
-                  {broker.website} &nearr;
+{broker.website} ↗
                 </a>
               )}
             </div>

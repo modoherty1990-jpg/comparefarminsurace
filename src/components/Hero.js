@@ -11,13 +11,25 @@ export default function Hero() {
       display: 'flex',
       alignItems: 'center',
     }}>
-      {/* Photo overlay — add your farm image as /public/hero-farm.jpg */}
+
+      {/* Background photo */}
+      <img
+        src="/hero-farm.jpg"
+        alt=""
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+objectPosition: 'center bottom',        }}
+      />
+
+      {/* Dark overlay so text stays readable */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: 'linear-gradient(105deg, rgba(20,50,12,0.97) 0%, rgba(25,55,15,0.88) 48%, rgba(25,55,15,0.6) 100%)',
-        backgroundImage: 'linear-gradient(105deg, rgba(20,50,12,0.97) 0%, rgba(25,55,15,0.88) 48%, rgba(25,55,15,0.6) 100%), url(/hero-farm.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(105deg, rgba(20,50,12,0.92) 0%, rgba(25,55,15,0.75) 48%, rgba(25,55,15,0.45) 100%)',
       }} />
 
       <div style={{ maxWidth: '660px', position: 'relative' }}>
