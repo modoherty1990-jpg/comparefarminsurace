@@ -1,6 +1,6 @@
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
-import GuideFAQ from '../../components/GuideFAQ'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import GuideFAQ from '@/components/GuideFAQ'
 import { supabase } from '../../lib/supabase'
 import { notFound } from 'next/navigation'
 

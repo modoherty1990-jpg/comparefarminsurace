@@ -1,10 +1,9 @@
 // src/app/sitemap.js
-import { createClient } from '@/lib/supabase'
+import { supabase } from "@/app/lib/supabase"
 
 const BASE_URL = 'https://comparefarminsurace.com.au'
 
 export default async function sitemap() {
-  const supabase = createClient()
 
   // Fetch published guide slugs
   const { data: guides } = await supabase
