@@ -2,123 +2,111 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'How Matching Works | compareconstructioninsurance.com.au',
+  title: 'How Matching Works | Compare Farm Insurance Australia',
+  description: 'How our farm insurance broker matching algorithm works — what we score, how we rank, and why fit determines your results.',
 }
 
-export default function HowMatchingWorks() {
+export default function HowMatchingWorksPage() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '64px' }}>
-        <section style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 5%' }}>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>
-            How matching works
-          </h1>
-          <p style={{ color: '#94a3b8', marginBottom: '3rem', fontSize: '0.95rem', lineHeight: 1.7 }}>
-            We believe you should know exactly how we match you with brokers. Here is a transparent breakdown of our scoring system.
-          </p>
+      <main style={{ paddingTop: '64px', background: 'var(--cream)' }}>
 
-          <div style={{ marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '1.5rem' }}>
-              The four scoring signals
-            </h2>
+        <div style={{ background: 'var(--green)', padding: '60px 5%' }}>
+          <div style={{ maxWidth: '760px' }}>
+            <h1 style={{
+              fontFamily: "'Fraunces', serif",
+              color: 'white', fontSize: 'clamp(28px, 4vw, 42px)',
+              fontWeight: 800, lineHeight: 1.1,
+            }}>How the matching works</h1>
+            <p style={{ color: 'rgba(255,255,255,0.75)', marginTop: '16px', fontSize: '17px', lineHeight: 1.7, maxWidth: '580px' }}>
+              Our matching quiz scores every broker in our panel against your answers.
+              Here&apos;s exactly how it works and what goes into your results.
+            </p>
+          </div>
+        </div>
 
-            {[
-              {
-                signal: 'Trade type match',
-                points: '+4 points',
-                color: '#10b981',
-                desc: 'The strongest signal. If a broker specialises in your trade type — builder, tradie, civil contractor, consultant etc — they score 4 points. This is weighted highest because a broker who knows your industry will understand your risks, your contracts and your legal obligations far better than a generalist.'
-              },
-              {
-                signal: 'Cover match',
-                points: 'Up to +4 points',
-                color: '#f59e0b',
-                desc: 'For each type of cover you need that a broker can arrange, they score 2 points — up to a maximum of 4. So if you need public liability and contract works and a broker covers both, they score the full 4. This ensures brokers who can handle your complete insurance needs score higher than those who can only partially help.'
-              },
-              {
-                signal: 'Business size fit',
-                points: '+3 points',
-                color: '#f59e0b',
-                desc: 'Brokers who typically work with businesses of your size score 3 points. A sole trader benefits from a broker experienced with small operators. A large contractor needs a broker set up to handle complex, multi-policy programs. Matching on size means you get a broker who is genuinely used to working with businesses like yours.'
-              },
-              {
-                signal: 'State fit',
-                points: '+2 points',
-                color: '#94a3b8',
-                desc: 'Brokers who operate in your state score 2 points. National brokers always score this point. State-specific brokers only score it if their coverage area matches your state. This matters most for home warranty insurance, which has different distributors in each state.'
-              },
-            ].map(item => (
-              <div key={item.signal} style={{
-                background: '#1a2733',
-                border: '1px solid rgba(255,255,255,0.08)',
-                borderRadius: '12px',
-                padding: '1.5rem',
-                marginBottom: '1rem',
-                display: 'flex',
-                gap: '1.5rem',
-                alignItems: 'flex-start',
-              }}>
-                <div style={{
-                  background: 'rgba(255,255,255,0.05)',
-                  borderRadius: '8px',
-                  padding: '8px 14px',
-                  fontSize: '0.8rem',
-                  fontWeight: 700,
-                  color: item.color,
-                  whiteSpace: 'nowrap',
-                  flexShrink: 0,
-                }}>{item.points}</div>
-                <div>
-                  <h3 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.4rem' }}>
-                    {item.signal}
-                  </h3>
-                  <p style={{ fontSize: '0.875rem', color: '#8faabf', lineHeight: 1.7 }}>
-                    {item.desc}
-                  </p>
-                </div>
+        <div style={{ maxWidth: '760px', margin: '0 auto', padding: '60px 5%' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', fontSize: '16px', lineHeight: 1.75, color: 'var(--text)' }}>
+
+            <section>
+              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>What we score</h2>
+              <p>Every broker in our panel is tagged across five dimensions. When you complete the quiz, your answers are scored against each broker&apos;s tags. The brokers with the highest fit scores are shown as your top matches.</p>
+              <p style={{ marginTop: '12px' }}>The five dimensions are:</p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '20px' }}>
+                {[
+                  { dim: 'Farm type', weight: '35%', desc: 'The most important factor. A broker who specialises in your type of farming — cropping, dairy, viticulture, hobby, poultry — will understand your risks far better than a generalist. If a broker doesn\'t cover your farm type at all, they\'re excluded from your results entirely.' },
+                  { dim: 'Location', weight: '20%', desc: 'Your state determines natural peril exposure — bushfire ratings, flood zones, hail corridors — and which brokers have local offices and regional knowledge close to you. Some brokers have particularly strong presences in specific states.' },
+                  { dim: 'Farm scale', weight: '20%', desc: 'A hobby farm needs a simple packaged policy. A large commercial operation needs a broker who can negotiate complex bespoke terms across multiple insurers. Matching you to the right tier means you\'ll be properly serviced.' },
+                  { dim: 'Coverage needs', weight: '15%', desc: 'We score how many of your selected coverage needs a broker can actually service — from livestock and machinery through to multi-peril crop insurance, wine spoilage, and workers compensation.' },
+                  { dim: 'Special features', weight: '10%', desc: 'Agistment, cellar doors, irrigation infrastructure, organic certification, and multiple properties all require specialist underwriting experience. Brokers with that experience get a scoring boost when you flag these features.' },
+                ].map(({ dim, weight, desc }) => (
+                  <div key={dim} style={{
+                    background: 'var(--white)',
+                    borderRadius: '10px',
+                    padding: '20px 24px',
+                    border: '1px solid var(--border)',
+                    display: 'flex', gap: '16px',
+                  }}>
+                    <div style={{ flexShrink: 0 }}>
+                      <div style={{
+                        background: 'var(--green)', color: 'var(--amber)',
+                        borderRadius: '8px', padding: '6px 12px',
+                        fontSize: '13px', fontWeight: 700,
+                        fontFamily: "'Fraunces', serif",
+                        whiteSpace: 'nowrap',
+                      }}>{weight}</div>
+                    </div>
+                    <div>
+                      <strong style={{ display: 'block', marginBottom: '6px', color: 'var(--green)', fontSize: '15px' }}>{dim}</strong>
+                      <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: 1.65, margin: 0 }}>{desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </section>
 
-          <div style={{ marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
-              Specialist bonus
-            </h2>
-            <p style={{ color: '#8faabf', lineHeight: 1.8, fontSize: '0.95rem' }}>
-              Brokers who are dedicated construction specialists — meaning construction insurance is their primary focus rather than one of many categories — receive an additional 2 point bonus. This reflects the real-world advantage of working with a broker who lives and breathes your industry.
-            </p>
-          </div>
+            <section>
+              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>How we show results</h2>
+              <p>Your top 3 brokers by fit score are shown. Each result includes a match percentage, a plain-English explanation of why that broker fits your farm, and their contact details so you can get in touch directly.</p>
+              <p style={{ marginTop: '12px' }}>Showing 3 results rather than one means you can compare options and choose the broker you feel most comfortable talking to.</p>
+            </section>
 
-          <div style={{ marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
-              Minimum threshold
-            </h2>
-            <p style={{ color: '#8faabf', lineHeight: 1.8, fontSize: '0.95rem' }}>
-              A broker must score at least 3 points to appear in your results. This means a broker with no relevant trade experience, no matching cover types and no state presence will never appear — even if no strong matches exist. We would rather show you fewer results than show you irrelevant ones.
-            </p>
-          </div>
+            <section>
+              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>What doesn&apos;t affect your results</h2>
+              <p>Brokers cannot pay to rank higher in your results. The matching score is calculated purely from the fit between your quiz answers and each broker&apos;s tagged specialisations.</p>
+              <p style={{ marginTop: '12px' }}>Compare Farm Insurance receives referral fees from brokers when users make contact through the site. This is how the site is funded — but it has no influence on which brokers appear in your results or in what order.</p>
+            </section>
 
-          <div style={{ marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '1rem' }}>
-              What we do not score on
-            </h2>
-            <p style={{ color: '#8faabf', lineHeight: 1.8, fontSize: '0.95rem' }}>
-              We do not score brokers based on how much they pay us, how long they have been on our platform, or any other commercial factor. A broker cannot pay to appear higher in your results. Rankings are determined entirely by the four signals above.
-            </p>
-          </div>
+            <section>
+              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>How brokers are added to the panel</h2>
+              <p>Every broker in our panel has been individually researched. We review their stated specialisations, farm types covered, state coverage, and product range before tagging them in our system. We prioritise specialist agricultural brokers and underwriting agencies over generalist call centres.</p>
+              <p style={{ marginTop: '12px' }}>We do not list every broker in Australia — we list the ones we believe will genuinely serve farmers well across different enterprise types and scales.</p>
+            </section>
 
-          <div style={{
-            background: '#1a2733',
-            border: '1px solid rgba(245,158,11,0.2)',
-            borderRadius: '12px',
-            padding: '1.5rem',
-          }}>
-            <p style={{ fontSize: '0.85rem', color: '#94a3b8', lineHeight: 1.7 }}>
-              This tool is designed to help you find relevant brokers faster — not to replace professional advice. Once matched, contact your broker directly and ask them to explain what cover is right for your specific situation. Always read their Financial Services Guide before proceeding.
-            </p>
+            <section style={{
+              background: 'var(--cream-dark)',
+              borderRadius: '12px',
+              padding: '28px',
+              border: '1px solid var(--border)',
+            }}>
+              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', marginBottom: '12px', color: 'var(--green)' }}>Ready to get matched?</h2>
+              <p style={{ marginBottom: '20px' }}>The quiz takes about 90 seconds. No personal details needed to see your results.</p>
+              <a href="/#quiz" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: 'var(--green)', color: 'white',
+                padding: '13px 24px', borderRadius: '8px',
+                fontSize: '15px', fontWeight: 600, textDecoration: 'none',
+                fontFamily: "'DM Sans', sans-serif",
+              }}>
+                Take the quiz &rarr;
+              </a>
+            </section>
+
           </div>
-        </section>
+        </div>
+
       </main>
       <Footer />
     </>

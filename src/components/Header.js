@@ -14,9 +14,9 @@ export default function Header() {
 
   const links = [
     { label: 'How It Works', href: '#how' },
-    { label: 'Brokers', href: '#brokers' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Guides', href: '/guides' },
+    { label: 'Brokers', href: '/brokers' }
   ]
 
   return (

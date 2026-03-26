@@ -1,9 +1,8 @@
 import { supabase } from '@/app/lib/supabase'
 
 export default async function BrokerDirectory() {
-
-const { data: brokers } = await supabase
-  .from('farm_brokers')
+  const { data: brokers } = await supabase
+    .from('farm_brokers')
     .select('*')
     .eq('hidden', false)
     .order('priority', { ascending: false })
@@ -11,12 +10,13 @@ const { data: brokers } = await supabase
   if (!brokers || brokers.length === 0) return null
 
   return (
-    <section id="brokers" style={{ padding: '80px 5%', background: 'var(--cream-dark)' }}>
-      <span className="section-label">Broker directory</span>
-      <h2 className="section-title">All brokers in our panel</h2>
+    <section style={{ padding: '80px 5%', background: 'var(--cream)' }}>
+      <span className="section-label">Broker panel</span>
+      <h2 className="section-title">Brokers in our panel</h2>
       <p className="section-desc">
-        Every broker listed here has been researched and tagged against farm type,
-        scale, state, and coverage capability. Use the quiz above to get your matched shortlist.
+        Every broker here has been researched and tagged against farm type, scale,
+        state, and coverage capability. Use the quiz on the homepage to get your
+        matched shortlist.
       </p>
 
       <div style={{
@@ -33,9 +33,13 @@ const { data: brokers } = await supabase
             display: 'flex', flexDirection: 'column', gap: '12px',
           }}>
             <div>
-              <h3 style={{ fontSize: '17px', marginBottom: '4px', color: 'var(--green)' }}>{broker.name}</h3>
+              <h3 style={{ fontSize: '17px', marginBottom: '6px', color: 'var(--green)' }}>
+                {broker.name}
+              </h3>
               {broker.description && (
-                <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>{broker.description}</p>
+                <p style={{ fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6 }}>
+                  {broker.description}
+                </p>
               )}
             </div>
 
@@ -68,20 +72,14 @@ const { data: brokers } = await supabase
               </div>
             )}
 
-            {/* Contact */}
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: 'auto' }}>
-              {broker.show_phone && broker.phone && (
-                <a href={`tel:${broker.phone}`} style={{
-                  fontSize: '13px', color: 'var(--green)',
-                  fontWeight: 600, textDecoration: 'none',
-                }}>{broker.phone}</a>
-              )}
-              {broker.show_website && broker.website && (
-                <a href={`https://${broker.website}`} target="_blank" rel="noopener noreferrer"
-                  style={{ fontSize: '13px', color: 'var(--green-light)', textDecoration: 'none' }}>
-{broker.website} ↗
-                </a>
-              )}
+            {/* CTA back to quiz */}
+            <div style={{ marginTop: 'auto', paddingTop: '8px' }}>
+              <a href="/#quiz" style={{
+                fontSize: '13px', color: 'var(--green-light)',
+                fontWeight: 600, textDecoration: 'none',
+              }}>
+                Get matched via the quiz &rarr;
+              </a>
             </div>
           </div>
         ))}
