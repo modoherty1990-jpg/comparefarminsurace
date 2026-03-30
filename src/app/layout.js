@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
   display: 'swap',
 })
 
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX' // replace after creating GA4 property
+const GA_MEASUREMENT_ID = 'G-XXXG-R4GMDF2BLQ' // replace after creating GA4 property
 
 export const metadata = {
   title: 'Compare Farm Insurance Australia | Find the Right Broker for Your Farm',
