@@ -26,59 +26,67 @@ export default function GuidesContent() {
 
   return (
     <section style={{ maxWidth: '900px', margin: '0 auto', padding: '80px 5%' }}>
-      <div className="section-label">Resources</div>
+      <span className="section-label">Resources</span>
       <h1 style={{
-        fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-        fontWeight: 800, letterSpacing: '-0.04em',
-        lineHeight: 1.1, marginBottom: '1rem',
+        fontFamily: "'Fraunces', serif",
+        fontSize: 'clamp(28px, 4vw, 42px)',
+        fontWeight: 800, lineHeight: 1.1,
+        marginBottom: '16px', color: 'var(--green)',
       }}>
-        Insurance guides for builders & tradies
+        Farm insurance guides
       </h1>
-      <p style={{ color: '#8faabf', fontSize: '1.05rem', lineHeight: 1.7, maxWidth: '560px', marginBottom: '4rem' }}>
-        Plain English guides to construction and trades insurance in Australia. Written for tradies, not lawyers.
+      <p style={{ color: 'var(--muted)', fontSize: '17px', lineHeight: 1.7, maxWidth: '540px', marginBottom: '56px' }}>
+        Plain English guides to farm insurance in Australia. Written for farmers, not lawyers.
       </p>
 
       {guides.length === 0 && (
-        <p style={{ color: '#64748b', fontSize: '0.95rem' }}>More guides coming soon.</p>
+        <p style={{ color: 'var(--muted)', fontSize: '15px' }}>Guides coming soon.</p>
       )}
 
       {Object.entries(grouped).map(([category, items]) => (
-        <div key={category} style={{ marginBottom: '3rem' }}>
+        <div key={category} style={{ marginBottom: '48px' }}>
           <h2 style={{
-            fontSize: '0.75rem', fontWeight: 700,
-            letterSpacing: '0.1em', textTransform: 'uppercase',
-            color: '#f59e0b', marginBottom: '1.5rem',
+            fontSize: '11px', fontWeight: 600,
+            letterSpacing: '2.5px', textTransform: 'uppercase',
+            color: 'var(--green-light)', marginBottom: '20px',
           }}>{category}</h2>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: '1rem',
+            gap: '16px',
           }}>
             {items.map(guide => (
               <a key={guide.slug} href={`/guides/${guide.slug}`} style={{
-                background: '#1a2733',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--white)',
+                border: '1px solid var(--border)',
                 borderRadius: '12px',
-                padding: '1.25rem 1.5rem',
+                padding: '24px',
                 textDecoration: 'none',
                 display: 'block',
-                transition: 'border-color 0.2s',
+                transition: 'border-color 0.2s, box-shadow 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(245,158,11,0.3)'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'var(--green)'
+                e.currentTarget.style.boxShadow = 'var(--shadow)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
               >
                 <div style={{
-                  fontWeight: 600, fontSize: '0.95rem',
-                  color: '#ffffff', marginBottom: '0.4rem',
+                  fontWeight: 600, fontSize: '15px',
+                  color: 'var(--green)', marginBottom: '6px',
+                  fontFamily: "'Fraunces', serif",
                 }}>{guide.title}</div>
                 <div style={{
-                  fontSize: '0.85rem', color: '#8faabf', lineHeight: 1.5,
-                }}>{guide.desc}</div>
+                  fontSize: '13px', color: 'var(--muted)', lineHeight: 1.6,
+                }}>{guide.description}</div>
                 <div style={{
-                  fontSize: '0.8rem', color: '#f59e0b',
-                  marginTop: '0.75rem', fontWeight: 500,
-                }}>Read guide →</div>
+                  fontSize: '13px', color: 'var(--amber)',
+                  marginTop: '12px', fontWeight: 600,
+                }}>Read guide &rarr;</div>
               </a>
             ))}
           </div>
