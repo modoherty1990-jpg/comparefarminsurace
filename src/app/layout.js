@@ -26,14 +26,14 @@ export const metadata = {
   keywords: 'farm insurance Australia, farm insurance broker, compare farm insurance, crop insurance, livestock insurance, hobby farm insurance, agribusiness insurance',
   authors: [{ name: 'Compare Farm Insurance' }],
   creator: 'Compare Farm Insurance',
-  metadataBase: new URL('https://comparefarminsurace.com.au'),
+  metadataBase: new URL('https://comparefarminsurance.com.au'),
   alternates: {
-    canonical: 'https://comparefarminsurace.com.au',
+    canonical: 'https://comparefarminsurance.com.au',
   },
   openGraph: {
     title: 'Compare Farm Insurance Australia',
     description: 'Find the right farm insurance broker for your operation. Matched by farm type, location, and scale.',
-    url: 'https://comparefarminsurace.com.au',
+    url: 'https://comparefarminsurance.com.au',
     siteName: 'Compare Farm Insurance',
     locale: 'en_AU',
     type: 'website',
@@ -68,24 +68,24 @@ const schemaMarkup = {
   '@graph': [
     {
       '@type': 'WebSite',
-      '@id': 'https://comparefarminsurace.com.au/#website',
-      url: 'https://comparefarminsurace.com.au',
+      '@id': 'https://comparefarminsurance.com.au/#website',
+      url: 'https://comparefarminsurance.com.au',
       name: 'Compare Farm Insurance',
       description: 'Australia\'s farm insurance broker matching service',
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://comparefarminsurace.com.au/guides?search={search_term_string}',
+        target: 'https://comparefarminsurance.com.au/guides?search={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
     },
     {
       '@type': 'Organization',
-      '@id': 'https://comparefarminsurace.com.au/#organization',
+      '@id': 'https://comparefarminsurance.com.au/#organization',
       name: 'Compare Farm Insurance',
-      url: 'https://comparefarminsurace.com.au',
+      url: 'https://comparefarminsurance.com.au',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://comparefarminsurace.com.au/logo.svg',
+        url: 'https://comparefarminsurance.com.au/logo.svg',
       },
       description: 'Farm insurance broker matching service for Australian farmers',
       areaServed: 'AU',

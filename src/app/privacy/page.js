@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Who we are</h2>
-              <p>Compare Farm Insurance (comparefarminsurace.com.au) is a referral and matching service that connects Australian farmers with specialist farm insurance brokers. We are not an insurance broker and we do not provide financial advice.</p>
+              <p>Compare Farm Insurance (comparefarminsurance.com.au) is a referral and matching service that connects Australian farmers with specialist farm insurance brokers. We are not an insurance broker and we do not provide financial advice.</p>
             </section>
 
             <section>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Contact</h2>
-              <p>For privacy-related enquiries, contact us at: <strong>hello@comparefarminsurace.com.au</strong></p>
+              <p>For privacy-related enquiries, contact us at: <strong>hello@comparefarminsurance.com.au</strong></p>
             </section>
 
           </div>

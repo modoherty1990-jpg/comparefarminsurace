@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Disclaimer | Compare Farm Insurance Australia',
-  description: 'Disclaimer for comparefarminsurace.com.au — important information about our referral service.',
+  description: 'Disclaimer for comparefarminsurance.com.au — important information about our referral service.',
 }
 
 export default function DisclaimerPage() {
@@ -58,7 +58,7 @@ export default function DisclaimerPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Contact</h2>
-              <p>For any questions about this disclaimer, contact us at: <strong>hello@comparefarminsurace.com.au</strong></p>
+              <p>For any questions about this disclaimer, contact us at: <strong>hello@comparefarminsurance.com.au</strong></p>
             </section>
 
           </div>

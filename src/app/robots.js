@@ -6,6 +6,6 @@ export default function robots() {
       allow: '/',
       disallow: '/admin',
     },
-    sitemap: 'https://comparefarminsurace.com.au/sitemap.xml',
+    sitemap: 'https://comparefarminsurance.com.au/sitemap.xml',
   }
 }

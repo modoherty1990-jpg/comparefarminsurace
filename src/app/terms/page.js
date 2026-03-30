@@ -3,7 +3,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Terms of Use | Compare Farm Insurance Australia',
-  description: 'Terms of use for comparefarminsurace.com.au',
+  description: 'Terms of use for comparefarminsurance.com.au',
 }
 
 export default function TermsPage() {
@@ -30,7 +30,7 @@ export default function TermsPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>About this site</h2>
-              <p>comparefarminsurace.com.au is operated by Compare Farm Insurance. By using this site you agree to these terms. If you do not agree, please do not use the site.</p>
+              <p>comparefarminsurance.com.au is operated by Compare Farm Insurance. By using this site you agree to these terms. If you do not agree, please do not use the site.</p>
             </section>
 
             <section>
@@ -67,7 +67,7 @@ export default function TermsPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Contact</h2>
-              <p>For any questions about these terms, contact us at: <strong>hello@comparefarminsurace.com.au</strong></p>
+              <p>For any questions about these terms, contact us at: <strong>hello@comparefarminsurance.com.au</strong></p>
             </section>
 
           </div>

@@ -1,7 +1,7 @@
 // src/app/sitemap.js
 import { supabase } from "@/app/lib/supabase"
 
-const BASE_URL = 'https://comparefarminsurace.com.au'
+const BASE_URL = 'https://comparefarminsurance.com.au'
 
 export default async function sitemap() {
 
