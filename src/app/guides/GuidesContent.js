@@ -8,7 +8,7 @@ export default function GuidesContent() {
   useEffect(() => {
     async function fetchGuides() {
       const { data } = await supabase
-        .from('guides')
+        .from('farm_guides')
         .select('slug, title, description, category')
         .eq('published', true)
         .order('created_at', { ascending: false })

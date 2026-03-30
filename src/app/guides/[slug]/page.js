@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
 
   const { data } = await supabase
-    .from('guides')
+.from('farm_guides')
     .select('title, description')
     .eq('slug', slug)
     .single()
@@ -25,7 +25,7 @@ export default async function GuidePage({ params }) {
   const { slug } = await params
 
   const { data: guide } = await supabase
-    .from('guides')
+.from('farm_guides')
     .select('*')
     .eq('slug', slug)
     .eq('published', true)
