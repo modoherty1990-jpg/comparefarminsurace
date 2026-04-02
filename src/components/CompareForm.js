@@ -560,37 +560,23 @@ export default function CompareForm() {
           {step === 7 && results && (
             <div>
               <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-                <h2 style={{ fontSize: '26px', marginBottom: '8px' }}>Your matched brokers</h2>
-                <p style={{ color: 'var(--muted)', fontSize: '15px' }}>Ranked by how well they fit your farm, based on all six of your answers.</p>
+                <h2 style={{ fontSize: '26px', marginBottom: '8px' }}>Brokers matched to your farm</h2>
+                <p style={{ color: 'var(--muted)', fontSize: '15px' }}>These brokers were matched to your farm based on your answers — compare them below.</p>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {results.map((broker, i) => {
                   const reasons = getReasons(broker, answers)
-                  const pct = Math.round(Math.min(98, broker.score))
                   return (
                     <div key={broker.id} style={{
                       border: `1.5px solid ${i === 0 ? 'var(--green)' : 'var(--border)'}`,
                       borderRadius: '12px', padding: '24px 28px',
                       background: 'var(--white)', position: 'relative', overflow: 'hidden',
                     }}>
-                      {i === 0 && (
-                        <div style={{
-                          position: 'absolute', top: 0, right: '24px',
-                          background: 'var(--green)', color: 'var(--amber)',
-                          fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px',
-                          textTransform: 'uppercase', padding: '5px 12px',
-                          borderRadius: '0 0 8px 8px',
-                        }}>Best match</div>
-                      )}
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                         <div>
                           <div style={{ fontFamily: "'Fraunces', serif", fontSize: '20px', fontWeight: 700, color: 'var(--green)', marginBottom: '3px' }}>{broker.name}</div>
                           <div style={{ fontSize: '12px', color: 'var(--muted)' }}>{broker.type}</div>
-                        </div>
-                        <div style={{ textAlign: 'right', flexShrink: 0, marginLeft: '16px' }}>
-                          <span style={{ fontFamily: "'Fraunces', serif", fontSize: '28px', fontWeight: 700, color: 'var(--green)', lineHeight: 1 }}>{pct}%</span>
-                          <span style={{ fontSize: '11px', color: 'var(--muted)', display: 'block', marginTop: '2px' }}>match score</span>
                         </div>
                       </div>
                       <p style={{ fontSize: '14px', color: 'var(--muted)', lineHeight: 1.65, marginBottom: '16px' }}>{broker.description}</p>
@@ -617,7 +603,7 @@ export default function CompareForm() {
                             onClick={() => trackClick(broker.name, 'website')}
                             style={{ color: 'var(--green)', fontSize: '14px', textDecoration: 'none', fontWeight: 500, padding: '10px 16px', border: '1px solid var(--border)', borderRadius: '7px', fontFamily: "'DM Sans', sans-serif" }}
                           >
-                            {broker.website} &nearr;
+                            Visit website →
                           </a>
                         )}
                       </div>
