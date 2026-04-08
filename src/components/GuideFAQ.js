@@ -7,48 +7,72 @@ export default function GuideFAQ({ faqs }) {
   if (!faqs || faqs.length === 0) return null
 
   return (
-    <div style={{ marginTop: '3rem' }}>
+    <div style={{ marginTop: '3.5rem' }}>
       <h2 style={{
-        fontSize: '1.5rem', fontWeight: 700,
-        color: '#ffffff', letterSpacing: '-0.02em',
-        marginBottom: '1.5rem',
-      }}>Quick answers</h2>
+        fontFamily: "'Fraunces', serif",
+        fontSize: 'clamp(1.3rem, 2.5vw, 1.6rem)',
+        fontWeight: 700,
+        color: 'var(--green)',
+        letterSpacing: '-0.02em',
+        marginBottom: '1.25rem',
+      }}>
+        Common questions
+      </h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {faqs.map((faq, idx) => (
           <div key={idx} style={{
-            background: '#1a2733',
-            border: '1px solid rgba(255,255,255,0.08)',
-            borderRadius: '12px',
+            background: '#ffffff',
+            border: '1px solid var(--border)',
+            borderRadius: '8px',
             overflow: 'hidden',
           }}>
             <button
               onClick={() => setOpen(open === idx ? null : idx)}
               style={{
-                width: '100%', textAlign: 'left',
-                padding: '1.25rem 1.5rem',
-                background: 'transparent', border: 'none',
+                width: '100%',
+                textAlign: 'left',
+                padding: '1rem 1.25rem',
+                background: 'transparent',
+                border: 'none',
                 cursor: 'pointer',
-                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
                 gap: '1rem',
               }}
             >
               <span style={{
-                fontSize: '0.95rem', fontWeight: 600,
-                color: '#ffffff', lineHeight: 1.4,
-              }}>{faq.q}</span>
+                fontSize: '0.95rem',
+                fontWeight: 600,
+                color: 'var(--green)',
+                lineHeight: 1.4,
+                fontFamily: "'DM Sans', sans-serif",
+              }}>
+                {faq.q}
+              </span>
               <span style={{
-                color: '#f59e0b', fontSize: '1.2rem',
-                flexShrink: 0, transition: 'transform 0.2s',
+                color: 'var(--amber)',
+                fontSize: '1.3rem',
+                fontWeight: 400,
+                flexShrink: 0,
+                lineHeight: 1,
+                transition: 'transform 0.2s',
                 transform: open === idx ? 'rotate(45deg)' : 'rotate(0deg)',
-              }}>+</span>
+                display: 'inline-block',
+              }}>
+                +
+              </span>
             </button>
 
             {open === idx && (
               <div style={{
-                padding: '0 1.5rem 1.25rem',
-                fontSize: '0.9rem', color: '#8faabf',
-                lineHeight: 1.7,
+                padding: '0 1.25rem 1rem',
+                fontSize: '0.92rem',
+                color: 'var(--muted)',
+                lineHeight: 1.75,
+                fontFamily: "'DM Sans', sans-serif",
+                borderTop: '1px solid var(--border)',
               }}>
                 {faq.a}
               </div>
