@@ -35,7 +35,7 @@ export default function TermsPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>What we do</h2>
-              <p>Compare Farm Insurance is a referral and matching service. We match farmers with specialist farm insurance brokers based on the information provided in our quiz. We are not an insurance broker, underwriting agency, or financial adviser. We do not provide quotes, arrange cover, or give personal financial advice.</p>
+              <p>Compare Farm Insurance is a free informational tool that helps farmers find specialist farm insurance brokers based on the information provided in our quiz. We are not an insurance broker, underwriting agency, or financial adviser. We do not provide quotes, arrange cover, or give personal financial advice.</p>
             </section>
 
             <section>
@@ -47,7 +47,6 @@ export default function TermsPage() {
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Broker relationships</h2>
               <p>The brokers listed on this site are independent businesses. Compare Farm Insurance does not endorse any specific broker and is not responsible for the advice, products, or services provided by any broker you contact through this site. Any arrangement you enter into with a broker is solely between you and that broker.</p>
-              <p style={{ marginTop: '12px' }}>Compare Farm Insurance receives referral fees from brokers when users make contact through this site. This commercial relationship does not influence the matching results — broker ranking is determined by fit to your quiz answers, not by commercial arrangements.</p>
             </section>
 
             <section>

@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 const GA_MEASUREMENT_ID = 'G-R4GMDF2BLQ'
 export const metadata = {
   title: 'Compare Farm Insurance Australia | Find the Right Broker for Your Farm',
-  description: 'Answer 6 quick questions and get matched with specialist farm insurance brokers who know your type of farming. Free, no obligation. Compare farm insurance brokers across Australia.',
+  description: 'Answer 6 quick questions and get matched with specialist farm insurance brokers who know your type of farming. Independent, no sign-up required. Compare farm insurance brokers across Australia.',
   keywords: 'farm insurance Australia, farm insurance broker, compare farm insurance, crop insurance, livestock insurance, hobby farm insurance, agribusiness insurance',
   authors: [{ name: 'Compare Farm Insurance' }],
   creator: 'Compare Farm Insurance',

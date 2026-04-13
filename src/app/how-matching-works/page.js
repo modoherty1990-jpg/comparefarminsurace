@@ -76,7 +76,6 @@ export default function HowMatchingWorksPage() {
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>What doesn&apos;t affect your results</h2>
               <p>Brokers cannot pay to rank higher in your results. The matching score is calculated purely from the fit between your quiz answers and each broker&apos;s tagged specialisations.</p>
-              <p style={{ marginTop: '12px' }}>Compare Farm Insurance receives referral fees from brokers when users make contact through the site. This is how the site is funded — but it has no influence on which brokers appear in your results or in what order.</p>
             </section>
 
             <section>

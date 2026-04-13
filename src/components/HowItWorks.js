@@ -8,7 +8,7 @@ export default function HowItWorks() {
     {
       num: '2',
       title: 'We score and match',
-      body: 'Your answers are scored across five dimensions — farm type, state, scale, coverage needs, and special features. Fit determines the ranking, not who pays us more.',
+      body: 'Your answers are scored across five dimensions — farm type, state, scale, coverage needs, and special features. Fit determines the ranking.',
     },
     {
       num: '3',

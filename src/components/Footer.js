@@ -77,10 +77,9 @@ export default function Footer() {
         fontSize: '11px', color: 'rgba(255,255,255,0.25)',
         marginTop: '20px', lineHeight: 1.7, maxWidth: '760px',
       }}>
-        Compare Farm Insurance is a referral service, not an insurance broker. We do not provide financial advice.
+        Compare Farm Insurance is an informational matching tool. We do not provide financial advice.
         Information on this site is general in nature and does not take into account your personal circumstances.
         Always read the relevant product disclosure statement before purchasing insurance.
-        Referral fees may be received from brokers when you make contact through this site.
       </p>
     </footer>
   )

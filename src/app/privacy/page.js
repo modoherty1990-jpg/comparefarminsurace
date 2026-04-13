@@ -30,7 +30,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Who we are</h2>
-              <p>Compare Farm Insurance (comparefarminsurance.com.au) is a referral and matching service that connects Australian farmers with specialist farm insurance brokers. We are not an insurance broker and we do not provide financial advice.</p>
+              <p>Compare Farm Insurance (comparefarminsurance.com.au) is an independent informational tool that helps Australian farmers find specialist farm insurance brokers. We are not an insurance broker and we do not provide financial advice.</p>
             </section>
 
             <section>
@@ -50,11 +50,6 @@ export default function PrivacyPage() {
                 <li>Understand how our site is used via aggregated analytics</li>
               </ul>
               <p style={{ marginTop: '12px' }}>We do not sell your personal information to third parties. We do not use your information for unsolicited marketing.</p>
-            </section>
-
-            <section>
-              <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: '22px', marginBottom: '12px', color: 'var(--green)' }}>Referral fees</h2>
-              <p>Compare Farm Insurance receives referral fees from brokers when users make contact through our site. This does not affect the cost of any insurance policy you purchase. Brokers cannot pay to rank higher in our matching results — only fit determines your matches.</p>
             </section>
 
             <section>

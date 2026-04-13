@@ -43,7 +43,7 @@ objectPosition: 'center bottom',        }}
           letterSpacing: '1px', textTransform: 'uppercase',
           marginBottom: '24px',
         }}>
-          Free matching service &nbsp;&middot;&nbsp; No obligation
+          Independent &nbsp;&middot;&nbsp; No sign-up required
         </div>
 
         <h1 style={{

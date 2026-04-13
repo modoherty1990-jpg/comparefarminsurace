@@ -6,11 +6,11 @@ export default function WhyUs() {
     },
     {
       title: 'How the matching works',
-      body: 'Your quiz answers are scored across five dimensions: farm type, location, scale, assets and coverage needs, and any special features. The top 3 brokers by fit score are shown. Fit determines the ranking, not commission.',
+      body: 'Your quiz answers are scored across five dimensions: farm type, location, scale, assets and coverage needs, and any special features. The top 3 brokers by fit score are shown. Fit determines the ranking.',
     },
     {
-      title: 'Free to use — always',
-      body: 'This site is funded by referral fees from brokers when you make contact. You never pay anything to use it. Brokers cannot pay to rank higher — only fit determines your matches.',
+      title: 'No sign-up required',
+      body: 'Use this tool at no cost, with no account needed. Browse your broker matches and contact them directly — you\'re always in control.',
     },
   ]
 
